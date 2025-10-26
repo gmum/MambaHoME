@@ -16,8 +16,8 @@
 </p>
 
 
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=simongeek/MambaHoME&left_color=%2363C7E6&right_color=%23CEE75F)
-[![GitHub stars](https://img.shields.io/github/stars/simongeek/MambaHoME.svg?style=social)](https://github.com/simongeek/MambaHoME/stargazers)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=gmum/MambaHoME&left_color=%2363C7E6&right_color=%23CEE75F)
+[![GitHub stars](https://img.shields.io/github/stars/gmum/MambaHoME.svg?style=social)](https://github.com/gmum/MambaHoME/stargazers)
 [![Cite](https://img.shields.io/badge/Cite-This%20Repo-blue)](https://arxiv.org/abs/2507.06363)
 
 <p align="center">
