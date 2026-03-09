@@ -127,6 +127,7 @@ conda activate mambaHoME
 
 > [!IMPORTANT]  
 > Before installing all dependencies, please install the Mamba packages first as provided in the official repository.
+> This is crucial to avoid potential conflicts between the Mamba SSM package and its dependencies, which may arise if all dependencies are installed together without first installing Mamba SSM.
 
 #### Step 3. Install the **Mamba SSM** package and its dependencies using the following steps:
 
@@ -212,11 +213,11 @@ If you use the code or methods in this repository, please cite:
 
 
 ```bibtex
-@article{plotka2025mamba,
-  title={Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation},
-  author={Płotka, Szymon and Mert, Gizem and Chrabaszcz, Maciej and Szczurek, Ewa and Sitek, Arkadiusz},
-  journal={arXiv preprint arXiv:2507.06363},
-  year={2025}
+@inproceedings{plotka2025mamba,
+title={Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation},
+author={Szymon Plotka and Gizem Mert and Maciej Chrabaszcz and Ewa Szczurek and Arkadiusz Sitek},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025}
 }
 ```
 ## Related work

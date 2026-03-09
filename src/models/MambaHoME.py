@@ -6,7 +6,7 @@ from mamba_ssm import Mamba
 from monai.networks.blocks.dynunet_block import UnetOutBlock
 from monai.networks.blocks.unetr_block import UnetrBasicBlock, UnetrUpBlock
 
-from src.models.soft_moe_2d_3d import HierarchicalSoftMoE2DBlock
+from src.model.soft_moe_2d_3d import HierarchicalSoftMoE2DBlock
 
 
 class DynamicTanh(nn.Module):
@@ -122,10 +122,6 @@ class MambaEncoder(nn.Module):
             Number of Mamba+MoE blocks per stage (4 stages total).
         dims: list[int] = [48,96,192,384]
             Channel dimension at each stage.
-        drop_path_rate: float = 0.0
-            (Optional) drop path regularization rate.
-        layer_scale_init_value: float = 1e-6
-            (Optional) residual layer scale initialization (not used explicitly here).
         out_indices: list[int] = [0,1,2,3]
             Indices of stages to return as outputs for skip connections.
         num_experts: int = 16
@@ -313,8 +309,6 @@ class MambaHoME(nn.Module):
         out_chans=13,
         depths=[2, 2, 2, 2],
         feat_size=[48, 96, 192, 384],
-        drop_path_rate=0,
-        layer_scale_init_value=1e-6,
         hidden_size=768,
         norm_name="instance",
         conv_block=True,
@@ -345,8 +339,6 @@ class MambaHoME(nn.Module):
             in_chans=in_chans,
             depths=depths,
             dims=feat_size,
-            drop_path_rate=drop_path_rate,
-            layer_scale_init_value=layer_scale_init_value,
             expert_mult=expert_mult,
             moe_dropout=moe_dropout,
             use_geglu=use_geglu,
