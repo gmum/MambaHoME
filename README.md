@@ -18,6 +18,7 @@
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=gmum/MambaHoME&left_color=%2363C7E6&right_color=%23CEE75F)
 [![GitHub stars](https://img.shields.io/github/stars/gmum/MambaHoME.svg?style=social)](https://github.com/gmum/MambaHoME/stargazers)
+[![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Weights-blue)](https://huggingface.co/simongeek/MambaHoME/resolve/main/MambaHoME_pretrained_weights.pth?download=true)
 [![Cite](https://img.shields.io/badge/Cite-This%20Repo-blue)](https://arxiv.org/abs/2507.06363)
 
 <p align="center">
@@ -32,7 +33,7 @@
 ## TL;DR
 We introduce <strong>Hierarchical Soft Mixture-of-Experts (HoME)</strong>, a two-level token-routing layer for efficient long-context modeling, specifically designed for 3D medical image segmentation. Built on the Mamba Selective State Space Model (SSM) backbone, HoME enhances sequential modeling through adaptive expert routing. In the first level, a Soft Mixture-of-Experts (SMoE) layer partitions input sequences into local groups, routing tokens to specialized per-group experts for localized feature extraction. The second level aggregates these outputs through a global SMoE layer, enabling cross-group information fusion and global context refinement. This hierarchical design, combining local expert routing with global expert refinement, enhances generalizability and segmentation performance, surpassing state-of-the-art results across datasets from the three most widely used 3D medical imaging modalities and varying data qualities.
 
-## Paper
+## 📄 Paper
 
 <b>Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation</b> <br/>
 [Szymon Płotka](https://scholar.google.com/citations?user=g9sWRN0AAAAJ)<sup>1,2</sup>*, [Gizem Mert](https://scholar.google.com/citations?user=tTPBMfsAAAAJ)<sup>3</sup>, [Maciej Chrabaszcz](https://scholar.google.com/citations?user=qdUVcecAAAAJ)<sup>4,5</sup>, [Ewa Szczurek](https://scholar.google.com/citations?user=hltmGf0AAAAJ)<sup>1,3</sup>, [Arkadiusz Sitek](https://scholar.google.com/citations?user=3QheHgMAAAAJ)<sup>6,7</sup><br/>
@@ -40,7 +41,17 @@ We introduce <strong>Hierarchical Soft Mixture-of-Experts (HoME)</strong>, a two
 Advances in Neural Information Processing Systems (NeurIPS) 2025 <br/><br/>
 <a href='https://arxiv.org/pdf/2507.06363'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a>
 
-## Datasets
+
+## 📦 Pre-trained Weights
+
+We release the pre-trained weights for our proposed Mamba-HoME model:
+
+* 🔗Download [Mamba-HoME pre-trained weights 🚀](https://huggingface.co/simongeek/MambaHoME/resolve/main/MambaHoME_pretrained_weights.pth?download=true)
+
+> [!TIP]
+> **Dataset Info:** The model is pre-trained on both multimodal **AbdomenAtlas 1.1 CT** and **TotalSegmentator MRI** datasets.
+
+## 📊 Datasets
 
 For pre-training, training, and evaluation of Mamba-HoME, we use the following datasets:
 
@@ -99,7 +110,7 @@ For pre-training, training, and evaluation of Mamba-HoME, we use the following d
 </table>
 
 
-## Installation
+## 🛠️ Installation
 
 
 #### Step 1. Install Anaconda on Linux
@@ -153,7 +164,7 @@ pip install . --no-build-isolation
 pip install -r requirements.txt
 ```
 
-## Usage
+## 🚀 Usage
 
 > [!NOTE]
 > We trained our proposed Mamba-HoME and other state-of-the-art methods using 32-bit floating-point (float32) precision.
@@ -207,20 +218,22 @@ python inference.py \
 * PyTorch 2.4+
 * MONAI 1.3.0+
 
-## Citation
+## 🎓 Citation
 
 If you use the code or methods in this repository, please cite:
 
 
 ```bibtex
-@inproceedings{plotka2025mamba,
-title={Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation},
-author={Szymon Plotka and Gizem Mert and Maciej Chrabaszcz and Ewa Szczurek and Arkadiusz Sitek},
-booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
-year={2025}
+@article{plotka2026mamba,
+  title={Mamba goes home: Hierarchical soft mixture-of-experts for 3d medical image segmentation},
+  author={P{\l}otka, Szymon and Mert, Gizem and Chrabaszcz, Maciej and Szczurek, Ewa and Sitek, Arkadiusz},
+  journal={Advances in Neural Information Processing Systems},
+  volume={38},
+  pages={97871--97909},
+  year={2026}
 }
 ```
-## Related work
+## 🔗 Related work
 
 Our method builds upon the following works and their official implementations:
 - [Mamba: Linear-Time Sequence Modeling with Selective SSMs (Gu & Dao, 2024)](https://arxiv.org/abs/2312.00752)
@@ -228,11 +241,9 @@ Our method builds upon the following works and their official implementations:
 - [SegMamba: Long-range Sequential Modeling Mamba For 3D Medical Image Segmentation (Xing et al., 2024)](https://arxiv.org/abs/2401.13560)
 
 
-## License
+## 🪪 License and Acknowledgments
 
 This project is released under the [MIT License](https://opensource.org/license/mit).
-
-## Acknowledgments
 
 We acknowledge the use of the HPC cluster at Helmholtz Munich for the computational resources used in this study.
 

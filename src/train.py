@@ -287,8 +287,6 @@ if args.model == "MambaHoME":
         out_chans=16,
         depths=[2, 2, 2, 2],
         feat_size=[48, 96, 192, 384],
-        drop_path_rate=0,
-        layer_scale_init_value=1e-6,
         hidden_size=768,
         norm_name="instance",
         conv_block=True,
